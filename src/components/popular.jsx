@@ -4,10 +4,10 @@ export default function popular() {
   const [popular, setPopular] = useState([])
 
   useEffect(() => {
-    getPupular()
+    getPopular()
   }, [])
 
-  const getPupular = async () => {
+  const getPopular = async () => {
    const api = await fetch (`https://api.spoonacular.com/recipes/random?apiKey=ddb257deb0f74f3c92c259602c64d036&number=9`)
    const data = await api.json();
    setPopular(data.recipes)
