@@ -1,0 +1,32 @@
+.searchBar-wrapper {
+  width: fit-content;
+  margin-block: 5em;
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+input {
+  min-width: 50em;
+  padding: 15px 1em;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: transparent;
+}
+.clear-btn {
+  position: absolute;
+  right: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+.clear-btn:hover svg {
+  color: #6e72ff !important;
+}
+::placeholder {
+  font-weight: 600;
+}

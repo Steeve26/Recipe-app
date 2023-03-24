@@ -1,0 +1,32 @@
+.categories-wrapper {
+  display: flex;
+  width: 30em;
+  justify-content: space-between;
+  margin-inline: auto;
+}
+.category-container {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  background: #333;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+.category-container:hover {
+  transform: scale(1.1);
+  box-shadow: #6e72ff 0px 0px 0px 3px, #6e72ff 0px 0px 0px 6px;
+}
+.category-container:hover .title{
+  transform: scale(.9);
+}
+.category-container .title {
+  position: absolute;
+  color: black;
+  bottom: -2em;
+  transition-duration: .3s;
+}

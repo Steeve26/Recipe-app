@@ -1,0 +1,40 @@
+::-webkit-scrollbar { 
+  display: none;
+}
+.header {
+  margin-bottom: 1em;
+  font-size: 25px;
+}
+.popular_wrapper {
+  margin-top: 4em;
+}
+.popular {
+  display: flex;
+  gap: 2em;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.recipe_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+.recipe_container img {
+  object-fit: cover;
+  width: 25em;
+  height: 16em;
+  border-radius: 20px;
+  filter: brightness(.8);
+}
+.recipe_container li {
+  position: absolute;
+  bottom: 1em;
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}

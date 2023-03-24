@@ -1,7 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import styles from './veggies.module.css'
 
-export default function veggies() {
+export default function veggie() {
+  const [veggie, setVeggie] = useState([])
+  console.log(veggie);
+
+  useEffect(() => {
+    getveggie()
+  }, [])
+
+  const getveggie = async () => {
+    const check = localStorage.getItem('veggie')
+
+    if (check) 
+      setVeggie(JSON.parse(check))
+    else 
+      {
+        const api = await fetch (`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_APP_API_KEY}&number=9&tags=vegetarian`)
+        const data = await api.json();
+        localStorage.setItem('veggie', JSON.stringify(data.recipes))
+        setVeggie(data.recipes)
+        console.log(data, data.recipes)
+      }
+
+  }
   return (
-    <div>veggies</div>
+    <div className={styles.veggie_wrapper}>
+      <h1 className={styles.header}>Our Veggie picks 🍅</h1>
+      <ul className={styles.veggies} >
+        {veggie.map(recipe => {
+          return (
+            <div className={styles.recipe_container} key={recipe.id}>
+              <li>{recipe.title}</li>
+              <img src={recipe.image} alt={recipe.title} draggable="false" />
+            </div>
+          )
+        })}
+      </ul>
+    </div>
   )
 }
