@@ -1,30 +1,31 @@
 import React from 'react'
 import {FaPizzaSlice} from 'react-icons/fa'
 import {GiNoodles, GiChopsticks, GiHamburger} from 'react-icons/gi'
+import { NavLink } from 'react-router-dom'
 import './categories.css'
 
 export default function () {
   return (
     <div className='categories-wrapper'>
-      <div className="category-container">
+      <NavLink to={'/cuisine/italian'} className="category-container">
         <FaPizzaSlice/>
         <p className="title">Italian</p>
-      </div>
+      </NavLink>
 
-      <div className="category-container">
+      <NavLink to={'/cuisine/american'} className="category-container">
         <GiHamburger size={20}/>
         <p className="title">American</p>
-      </div>
+      </NavLink>
 
-      <div className="category-container">
+      <NavLink to={'/cuisine/thai'} className="category-container">
         <GiNoodles size={23}/>
         <p className="title">Thai</p>
-      </div>
+      </NavLink>
 
-      <div className="category-container">
+      <NavLink to={'/cuisine/japanese'} className="category-container">
         <GiChopsticks size={23}/>
         <p className="title">Japanese</p>
-      </div>
+      </NavLink>
     </div>
   )
 }
