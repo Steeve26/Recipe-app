@@ -4,7 +4,6 @@
 .header {
   margin-bottom: 1em;
   font-size: 25px;
-
 }
 .veggie_wrapper {
   margin-top: 3em;
@@ -27,7 +26,6 @@
   width: 20em;
   height: 15em;
   border-radius: 20px;
-  filter: brightness(.8);
 }
 .recipe_container li {
   position: absolute;
@@ -37,4 +35,6 @@
   text-align: center;
   z-index: 1;
   pointer-events: none;
+  text-shadow: 2px 2px #000;
+  font-weight: 600;
 }

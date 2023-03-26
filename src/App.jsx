@@ -1,17 +1,21 @@
 import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
+import Cuisine from './pages/cuisine'
+import Filters from './components/filters'
+import './App.css'
+import { GiKnifeFork } from 'react-icons/gi'
 
 function App() {
 
   return (
     <div className="App">
-      <h1>🍴 delicioso</h1>
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home/>}></Route>
-        </Routes>
+        <NavLink to={'./'}>
+          <h1> <GiKnifeFork size={25}/> delicioso</h1>
+        </NavLink>
+        <Filters/>
+        <Home/>
       </BrowserRouter>
     </div>
   )

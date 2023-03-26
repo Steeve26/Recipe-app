@@ -3,19 +3,16 @@ import Popular from '../components/popular'
 import Veggies from '../components/veggies'
 import Categories from '../components/categories'
 import SearchBar from '../components/searchBar'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import '../App.css'
+import Slides from './slides'
+import Cuisine from './cuisine'
 
 export default function home() {
   return (
-    <div className='home-wrapper'>
-      <div className="filters">
-        <SearchBar/>
-        <Categories/>
-      </div>
-      <div className="slides-wrapper">
-        <Popular/>
-        <Veggies/>
-      </div>
-    </div>
+    <Routes>
+      <Route path='/' element={<Slides/>}></Route>
+      <Route path='/cuisine/:type' element={<Cuisine/>}></Route>
+    </Routes>
   )
 }
