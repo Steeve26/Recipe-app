@@ -11,7 +11,7 @@ export default function cuisine() {
   }, [params.type])
 
   const getCuisine = async (type) => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=46fabf9262f947378c58bb345258a882&cuisine=${type}`)
+    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=19d3cebdf2e446aba6ee8c97ef9d8e4f&cuisine=${type}`)
     const recipes = await data.json();
     setCuisine(recipes.results)
   }
