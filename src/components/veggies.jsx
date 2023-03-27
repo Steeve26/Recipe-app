@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import styles from './veggies.module.css'
 
 export default function veggies() {
@@ -30,10 +31,12 @@ export default function veggies() {
       <ul className={styles.veggies} >
         {veggie.map(recipe => {
           return (
-            <div className={styles.recipe_container} key={recipe.id}>
-              <li>{recipe.title}</li>
-              <img src={recipe.image} alt={recipe.title} draggable="false" />
-            </div>
+            <Link to={`./recipe/${recipe.id}`}>
+              <div className={styles.recipe_container} key={recipe.id}>
+                <li>{recipe.title}</li>
+                <img src={recipe.image} alt={recipe.title} draggable="false" />
+              </div>
+            </Link>
           )
         })}
       </ul>

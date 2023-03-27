@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../App.css'
 
 export default function cuisine() {
@@ -7,7 +7,7 @@ export default function cuisine() {
   let params = useParams()
 
   useEffect( () => {
-    // getCuisine(params.type)
+    getCuisine(params.type)
   }, [params.type])
 
   const getCuisine = async (type) => {
@@ -20,10 +20,12 @@ export default function cuisine() {
     <div className='cuisine-container' >
       {cuisine.map((recipe, index) => {
         return (
-          <div className='image-container' key={index}>
-            <img src={recipe.image} alt={recipe.tilte} />
-            <p>{recipe.title}</p>
-          </div>
+          <Link to={`./recipe/${recipe.id}`}>
+            <div className='image-container' key={index}>
+              <img src={recipe.image} alt={recipe.tilte} />
+              <p>{recipe.title}</p>
+            </div>
+          </Link>
         )
       })}
     </div>

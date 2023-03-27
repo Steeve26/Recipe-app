@@ -8,8 +8,6 @@ export default function searchBar() {
   const [searchInput, setSearchInput] = useState('');
   const navigate = useNavigate()
 
-  console.log('navigate', navigate)
-
   function clear() {
     setSearchInput('')
   }

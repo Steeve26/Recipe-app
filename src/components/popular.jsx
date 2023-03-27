@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import styles from './popular.module.css'
 
 export default function popular() {
@@ -30,10 +31,12 @@ export default function popular() {
       <ul className={styles.popular}>
         {popular.map(recipe => {
           return (
-            <div className={styles.recipe_container} key={recipe.id}>
-              <li>{recipe.title}</li>
-              <img src={recipe.image} alt="" draggable='false'/>
-            </div>
+            <Link to={`./recipe/${recipe.id}`}>
+              <div className={styles.recipe_container} key={recipe.id}>
+                <li>{recipe.title}</li>
+                <img src={recipe.image} alt="" draggable='false'/>
+              </div>
+            </Link>
           )
         })}
       </ul>

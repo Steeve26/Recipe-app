@@ -50,3 +50,48 @@ a:focus {
   font-size: 1.3em;
   color: white;
 }
+.recipe-details-container {
+  display: flex;
+  justify-content: center;
+  margin-block: 7em 5em;
+  gap: 5em;
+}
+.recipe-details-container a {
+  display: inline;
+}
+.left-section img {
+  width: 25em;
+  height: 20em;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.left-section .title {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 1em;
+}
+.right-section .buttons {
+  margin-bottom: 2em;
+}
+.right-section .buttons button {
+  padding: 12px 20px;
+  margin-right: 1em;
+  font-size: 18px;
+  font-weight: 600;
+  border: 3px solid #333;
+  background: none;
+  cursor: pointer;
+  border-radius: 3px;
+  transition-duration: .3s;
+}
+.right-section .buttons button:hover,
+.right-section .buttons button:focus,
+.right-section .buttons button.active {
+  background: #333;
+  color: white;
+}
+.right-section .content {
+  font-weight: bold;
+  font-size: 18px;
+  max-width: 700px;
+}
