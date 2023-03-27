@@ -25,14 +25,28 @@ a:focus {
 .slides-wrapper {
   margin-block: 7em;
 }
-.cuisine-container {
+.cuisine-container, .search-results-container {
   margin-block: 6em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em 1em;
 }
-.cuisine-container img {
+.cuisine-container img, .search-results-container img {
   border-radius: 10px;
   object-fit: cover;
+}
+.cuisine-container .image-container, .search-results-container .image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.cuisine-container .image-container p, .search-results-container .image-container p {
+  position: absolute;
+  bottom: 1em;
+  text-align: center;
+  text-shadow: 2px 2px #000;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: white;
 }

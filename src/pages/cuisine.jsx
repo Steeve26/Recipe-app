@@ -11,19 +11,19 @@ export default function cuisine() {
   }, [params.type])
 
   const getCuisine = async (type) => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=9fb83d2feb7844edb2b05ab2dc3630c5&cuisine=${type}`)
+    const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_APP_API_KEY}&cuisine=${type}`)
     const recipes = await data.json();
     setCuisine(recipes.results)
   }
 
   return (
     <div className='cuisine-container' >
-      {cuisine.map(recipe => {
+      {cuisine.map((recipe, index) => {
         return (
-          <>
+          <div className='image-container' key={index}>
             <img src={recipe.image} alt={recipe.tilte} />
-            <p>{recipe.tilte}</p>
-          </>
+            <p>{recipe.title}</p>
+          </div>
         )
       })}
     </div>
