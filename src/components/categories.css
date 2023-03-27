@@ -17,7 +17,7 @@
   cursor: pointer;
   transition-duration: .3s;
 }
-.category-container:hover, .category-container:focus, .active {
+.category-container:hover, .category-container:focus, .categories-container.active {
   box-shadow: #6e72ff 0px 0px 0px 3px, #6e72ff 0px 0px 0px 6px;
 }
 .category-container:hover .title, .category-container:focus .title {

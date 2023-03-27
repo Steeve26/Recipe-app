@@ -7,7 +7,7 @@ export default function cuisine() {
   let params = useParams()
 
   useEffect( () => {
-    getCuisine(params.type)
+    // getCuisine(params.type)
   }, [params.type])
 
   const getCuisine = async (type) => {
