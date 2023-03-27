@@ -31,8 +31,8 @@ export default function veggies() {
       <ul className={styles.veggies} >
         {veggie.map(recipe => {
           return (
-            <Link to={`./recipe/${recipe.id}`}>
-              <div className={styles.recipe_container} key={recipe.id}>
+            <Link to={`./recipe/${recipe.id}`} key={recipe.id}>
+              <div className={styles.recipe_container}>
                 <li>{recipe.title}</li>
                 <img src={recipe.image} alt={recipe.title} draggable="false" />
               </div>

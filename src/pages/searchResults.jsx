@@ -6,7 +6,7 @@ export default function searchResults() {
   const params = useParams()
 
   useEffect(() => {
-    getResults([params.result])
+    getResults(params.resuls)
   }, [params.result])
 
   const getResults = async (query) => {
@@ -18,8 +18,8 @@ export default function searchResults() {
     <div className='search-results-container' >
       {searchResults.map((recipe, index) => {
         return (
-          <Link to={`./recipe/${recipe.id}`}>
-            <div className='image-container' key={index}>
+          <Link to={`./recipe/${recipe.id}`} key={index}>
+            <div className='image-container'>
               <img src={recipe.image} alt={recipe.tilte} />
               <p>{recipe.title}</p>
             </div>

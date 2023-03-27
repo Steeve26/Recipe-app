@@ -20,8 +20,8 @@ export default function cuisine() {
     <div className='cuisine-container' >
       {cuisine.map((recipe, index) => {
         return (
-          <Link to={`./recipe/${recipe.id}`}>
-            <div className='image-container' key={index}>
+          <Link to={`./recipe/${recipe.id}`} key={index}>
+            <div className='image-container'>
               <img src={recipe.image} alt={recipe.tilte} />
               <p>{recipe.title}</p>
             </div>
