@@ -27,6 +27,9 @@ export default function searchResults() {
           </Link>
         )
       })}
+      { !searchResults.length &&
+        <h1 className="search-fail" style={{marginTop: '4em'}}>Sorry, couldn't find anything... 😢</h1>
+      }
     </div>
   )
 }

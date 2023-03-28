@@ -35,6 +35,8 @@ a:focus {
 .cuisine-container img, .search-results-container img {
   border-radius: 10px;
   object-fit: cover;
+  width: 21em;
+  height: 14em;
 }
 .cuisine-container .image-container, .search-results-container .image-container {
   position: relative;
@@ -94,4 +96,12 @@ a:focus {
   font-weight: bold;
   font-size: 18px;
   max-width: 700px;
+  list-style: initial;
+}
+.content .instruction-wrapper {
+  margin-left: 1em;
+}
+.right-section .content ol li 
+{
+  list-style: decimal;
 }

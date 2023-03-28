@@ -35,7 +35,15 @@ export default function Recipes() {
 
         <div className="content">
           {content == 'summary' && <p dangerouslySetInnerHTML={{__html: recipeInfo.summary ? recipeInfo.summary : 'Sorry, summary unavailable'}}></p>}
-          {content == 'instructions' && <p dangerouslySetInnerHTML={{__html: recipeInfo.instructions ? recipeInfo.instructions : 'Sorry, instructions unavailable'}}></p>}
+          {
+            <div className="instruction-wrapper">
+            { content == 'instructions' && 
+              <p dangerouslySetInnerHTML={{__html: recipeInfo.instructions ? 
+                recipeInfo.instructions : 'Sorry, instructions unavailable'}}>
+              </p>
+            }
+            </div>
+          }
         </div>
       </section>
     </div>
