@@ -31,14 +31,11 @@ export default function Recipes() {
            onClick={() => setContent('summary')}>About</button>
           <button className={`${content  == 'instructions' && 'active'}`} 
            onClick={() => setContent('instructions')}>Instructions</button>
-          <button className={`${content  == 'ingredients' && 'active'}`} 
-           onClick={() => setContent('ingredients')}>Recipes</button>
         </div>
 
         <div className="content">
-          {content == 'summary' && <p dangerouslySetInnerHTML={{__html: recipeInfo.summary}}></p>}
-          {content == 'instructions' && <p>{recipeInfo.instructions}</p>}
-          {/* content == 'ingredients' && <p>recipes</p> */}
+          {content == 'summary' && <p dangerouslySetInnerHTML={{__html: recipeInfo.summary ? recipeInfo.summary : 'Sorry, summary unavailable'}}></p>}
+          {content == 'instructions' && <p dangerouslySetInnerHTML={{__html: recipeInfo.instructions ? recipeInfo.instructions : 'Sorry, instructions unavailable'}}></p>}
         </div>
       </section>
     </div>

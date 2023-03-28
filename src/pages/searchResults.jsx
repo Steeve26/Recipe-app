@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function searchResults() {
   const [searchResults, setSearchResults] = useState([]);
   const params = useParams()
 
   useEffect(() => {
-    getResults(params.resuls)
+    getResults(params.result)
   }, [params.result])
 
   const getResults = async (query) => {
@@ -14,11 +14,12 @@ export default function searchResults() {
     const recipes = await data.json()
     setSearchResults(recipes.results)
   }
+
   return (
     <div className='search-results-container' >
-      {searchResults.map((recipe, index) => {
+      {searchResults.map(recipe => {
         return (
-          <Link to={`./recipe/${recipe.id}`} key={index}>
+          <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
             <div className='image-container'>
               <img src={recipe.image} alt={recipe.tilte} />
               <p>{recipe.title}</p>

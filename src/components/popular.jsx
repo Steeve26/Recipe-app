@@ -4,7 +4,6 @@ import styles from './popular.module.css'
 
 export default function popular() {
   const [popular, setPopular] = useState([])
-  console.log(popular);
 
   useEffect(() => {
     getPopular()
@@ -21,7 +20,6 @@ export default function popular() {
         const data = await api.json();
         localStorage.setItem('popular', JSON.stringify(data.recipes))
         setPopular(data.recipes)
-        console.log(data, data.recipes)
       }
 
   }
@@ -31,7 +29,7 @@ export default function popular() {
       <ul className={styles.popular}>
         {popular.map(recipe => {
           return (
-            <Link to={`./recipe/${recipe.id}`} key={recipe.id}>
+            <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
               <div className={styles.recipe_container}>
                 <li>{recipe.title}</li>
                 <img src={recipe.image} alt="" draggable='false'/>

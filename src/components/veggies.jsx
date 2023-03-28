@@ -4,7 +4,6 @@ import styles from './veggies.module.css'
 
 export default function veggies() {
   const [veggie, setVeggie] = useState([])
-  console.log(veggie);
 
   useEffect(() => {
     getveggie()
@@ -31,7 +30,7 @@ export default function veggies() {
       <ul className={styles.veggies} >
         {veggie.map(recipe => {
           return (
-            <Link to={`./recipe/${recipe.id}`} key={recipe.id}>
+            <Link to={`/recipe/${recipe.id}`} key={recipe.id}>
               <div className={styles.recipe_container}>
                 <li>{recipe.title}</li>
                 <img src={recipe.image} alt={recipe.title} draggable="false" />
