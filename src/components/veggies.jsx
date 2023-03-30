@@ -13,7 +13,7 @@ export default function veggies() {
     const check = localStorage.getItem('veggie')
 
     if (check) 
-      setVeggie(json.parse(check))
+      setVeggie(JSON.parse(check))
     else 
       {
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_APP_API_KEY}&number=9&tags=vegetarian`)
