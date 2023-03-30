@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { json, Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import styles from './veggies.module.css'
 
 export default function veggies() {
