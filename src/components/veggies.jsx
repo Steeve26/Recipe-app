@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import styles from './veggies.module.css'
 
 export default function veggies() {
@@ -13,7 +13,7 @@ export default function veggies() {
     const check = localStorage.getItem('veggie')
 
     if (check) 
-      setVeggie(JSON.parse(check))
+      setVeggie(json.parse(check))
     else 
       {
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_APP_API_KEY}&number=9&tags=vegetarian`)
