@@ -90,7 +90,7 @@ a:focus {
 .right-section .buttons button:focus,
 .right-section .buttons button.active {
   background: #333;
-  color: white;
+  color: #436bb4;
 }
 .right-section .content {
   font-weight: bold;
